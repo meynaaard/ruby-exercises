@@ -66,4 +66,9 @@ def find_favorite(array_of_hash_objects)
   # TIP: there will only be a maximum of one hash in the array that will
   # return true to the :is_my_favorite? key
   array_of_hash_objects.find { |language| language.dig(:is_my_favorite?) }
+
+  # using #dig is unnecessary in this case, as #find already returns nil if
+  # there is no match in the collection.
+  # TOP solution: array_of_hash_objects.find { |hash| hash[:is_my_favorite?] }
+
 end

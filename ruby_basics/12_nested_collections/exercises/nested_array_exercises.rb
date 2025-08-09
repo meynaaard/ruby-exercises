@@ -48,6 +48,7 @@ def count_empty_seats(chart)
   # take a chart and return the number of empty (nil) seats in it
 
   # NOTE: `chart` should **not** be mutated
+  chart.flatten.count(nil)
 end
 
 def find_favorite(array_of_hash_objects)
@@ -64,4 +65,5 @@ def find_favorite(array_of_hash_objects)
 
   # TIP: there will only be a maximum of one hash in the array that will
   # return true to the :is_my_favorite? key
+  array_of_hash_objects.find { |language| language.dig(:is_my_favorite?) }
 end
